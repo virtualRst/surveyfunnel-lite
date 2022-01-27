@@ -523,4 +523,8 @@ class Surveyfunnel_Lite_Public {
 		}
 
 	}
+	public function surveyfunnel_lite_register_rest_api(){
+		$rest_api_class=new Surveyfunnel_Lite_Rest_Api();
+		$rest_api_class->init();
+	}
 }

@@ -400,10 +400,16 @@ export default function DesignPreview() {
                                     switch( ele.componentName ) {
                                         case 'FirstName':
                                         case 'LastName':
+                                        case 'Organisation':
                                         case 'ShortTextAnswer':
                                             return <div key={ele.id + '_' + i + 'key'}>
                                                 <label>{ele.name} {ele.required ? '*' : ''}</label>
                                                 <input type="text" id={ele.id + '_' + i} style={{ border: `1px solid ${convertToRgbaCSS(designCon.answerBorderColor)}` }} placeholder={ele.placeholder} required={ele.required} value={ele.value} onChange={handleChange} inputidx={i} listidx={idx} />
+                                            </div>
+                                        case 'Phone':
+                                            return <div key={ele.id + '_' + i + 'key'}>
+                                                <label>{ele.name} {ele.required ? '*' : ''}</label>
+                                                <input type="tel" id={ele.id + '_' + i} style={{ border: `1px solid ${convertToRgbaCSS(designCon.answerBorderColor)}` }} placeholder={ele.placeholder} required={ele.required} value={ele.value} onChange={handleChange} inputidx={i} listidx={idx}/>
                                             </div>
                                         case 'Email':
                                             return <div key={ele.id + '_' + i + 'key'}>

@@ -105,6 +105,22 @@ let formElements = [
 		placeholder: '',
 		value: ''
 	},
+    {
+        name: 'Phone',
+        componentName: 'Phone',
+        itemType: 'FORMFIELDS_ELEMENTS',
+        required: false,
+        placeholder: '',
+        value: ''
+    },
+    {
+        name: 'Organisation',
+        componentName: 'Organisation',
+        itemType: 'FORMFIELDS_ELEMENTS',
+        required: false,
+        placeholder: '',
+        value: ''
+    },
 ]
 const designColors = [
 	{
@@ -225,6 +241,19 @@ const shareTabsData = [
 	}
 ]
 
+const configureTabsData = [
+	{
+		name: 'General',
+		description: 'Basic Settings',
+		id: 'generalsettings'
+	},
+	{
+		name: 'Zapier Integration',
+		description: 'Integrate Zapier to connect hundreds of apps',
+		id: 'zapier'
+	}
+]
+
 const popupInitialState = {
 	active: false,
 	targettingOptions: {
@@ -267,5 +296,5 @@ const dimensionTypes = [
 	'%', 'px', 'em', 'rem'
 ];
 
-export { ItemTypes, buildElements, popupInitialState, shareTabsData, shortcodeTypes, initColorState, designColors, formElements, formElementsDropBoard, dropBoard, dimensionTypes };
+export { ItemTypes, buildElements, popupInitialState, shareTabsData, configureTabsData, shortcodeTypes, initColorState, designColors, formElements, formElementsDropBoard, dropBoard, dimensionTypes };
 

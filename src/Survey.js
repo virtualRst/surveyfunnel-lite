@@ -31,6 +31,10 @@ function validateEmail(email) {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     return re.test(String(email).toLowerCase())
 }
+function validatePhone(phone) {
+    var a = /^(1\s|1|)?((\(\d{3}\))|\d{3})(\-|\s)?(\d{3})(\-|\s)?(\d{4})$/.test(phone);
+    return a
+}
 
 function convertToRgbaCSS(color) {
     let colorString = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`
@@ -407,6 +411,23 @@ function Survey() {
                                 }
                             }
                             break
+                        case 'Phone':
+                            if (item.required) {
+                                if (item.value === '') {
+                                    error.push(
+                                        <p key={error.length}>
+                                            {item.name} cannot be empty
+                                        </p>
+                                    )
+                                } else if (!validatePhone(item.value)) {
+                                    error.push(
+                                        <p key={error.length}>
+                                            Not a valid Phone number!
+                                        </p>
+                                    )
+                                }
+                            }
+                            break
                     }
                 })
                 break
@@ -775,6 +796,33 @@ function Survey() {
                                                     <label>{ele.name} {ele.required?'*':''}</label>
                                                     <input
                                                         type="email"
+                                                        id={ele.id + '_' + i}
+                                                        style={{
+                                                            border: `1px solid ${convertToRgbaCSS(
+                                                                designCon.answerBorderColor
+                                                            )}`,
+                                                        }}
+                                                        placeholder={
+                                                            ele.placeholder
+                                                        }
+                                                        required={ele.required}
+                                                        value={ele.value}
+                                                        onChange={handleChange}
+                                                        inputidx={i}
+                                                        listidx={idx}
+                                                    />
+                                                </div>
+                                            )
+                                        case 'Phone':
+                                            return (
+                                                <div
+                                                    key={
+                                                        ele.id + '_' + i + 'key'
+                                                    }
+                                                >
+                                                    <label>{ele.name} {ele.required?'*':''}</label>
+                                                    <input
+                                                        type="tel"
                                                         id={ele.id + '_' + i}
                                                         style={{
                                                             border: `1px solid ${convertToRgbaCSS(

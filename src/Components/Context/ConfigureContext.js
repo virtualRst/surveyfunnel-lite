@@ -12,6 +12,7 @@ export function ConfigureContextProvider( props ) {
 
 	// companybranding state.
 	const [companyBranding, setCompanyBranding] = useState(true);
+	const [proActive, setProActive] = useState(true);
 	const [proSettings, setProSettings] = useState({
 		...applyFilters( 'configureProState', {} )
 	});
@@ -34,6 +35,7 @@ export function ConfigureContextProvider( props ) {
             if ( data.data.configure === '' ) {
 				return;
 			}
+            setProActive(data.data.proActive);
 			let configure = JSON.parse(data.data.configure);
 			setMetaInfo(configure.metaInfo);
 			setCompanyBranding(configure.companyBranding);
@@ -86,7 +88,7 @@ export function ConfigureContextProvider( props ) {
 	}
 
 	const value = {
-		metaInfo, setMetaInfo, companyBranding, setCompanyBranding, options, setOptions, handleMetaChange, saveConfiguration, proSettings, setProSettings
+		metaInfo, setMetaInfo, companyBranding, setCompanyBranding, options, setOptions, handleMetaChange, saveConfiguration, proActive, proSettings, setProSettings
 	}
 	return(
 		<ConfigureContext.Provider

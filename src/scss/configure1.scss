@@ -1,0 +1,482 @@
+@font-face {
+    font-family: 'ApercuPro';
+    font-weight: normal;
+    src: url("../../assets/fonts/Apercu-Font/Apercu\ Pro\ Regular.otf") format("opentype");
+}
+@font-face {
+    font-family: ApercuPro;
+    font-weight: bold;
+    src: url("../../assets/fonts/Apercu-Font/Apercu\ Pro\ Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: ApercuPro;
+    font-weight: 500;
+    src: url("../../assets/fonts/Apercu-Font/Apercu\ Pro\ Medium.otf") format("opentype");
+}
+
+.Configure{
+    font-family: 'ApercuPro';
+    display: grid;
+    grid-template-columns: 400px 1fr;
+
+    .configureTabs{
+        height: calc(100vh - 108px);
+        background-color: #F1F2F6;
+        border-right: 1px solid #d2dae2;
+        .configureTabs-element-disabled{
+          opacity: 0.4;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid #d2dae2;
+          padding: 20px;
+          .configureTabs-element-title{
+            h3{
+              margin: 0;
+            }
+            p{
+              margin: 5px 20px 0 0;
+              color:#626F7D;
+              font-size: 14px;
+            }
+          }
+          h3{
+            margin: 20px;
+          }
+          img{
+            height: 15px;
+          }
+        }
+
+        .configureTabs-element{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #d2dae2;
+            padding: 20px;
+            .configureTabs-element-title{
+                h3{
+                    margin: 0;
+                }
+                p{
+                    margin: 5px 20px 0 0;
+                    color:#626F7D;
+                    font-size: 14px;
+                }
+            }
+            h3{
+                margin: 20px;
+            }
+            img{
+                height: 15px;
+            }
+        }
+
+    }
+    .configureTabContent{
+        .configureTabContentContainer{
+            .configurationRight{
+
+              .meta-info{
+                .configure-fields{
+                  overflow: auto;
+                  height: calc(100vh - 198px);
+                  .meta-info-container, .privacy-policy-container{
+                    padding: 20px 0 0 40px;
+                    border-bottom: 1px solid #d2dae2;
+                    h3{
+                      margin: 0;
+                    }
+                    p{
+                      margin: 5px 0 20px 0;
+                      color: #626F7D;
+                    }
+                    label{
+                      display: block;
+                      font-weight: bold;
+                    }
+                    input {
+                      width: 546px;
+                      padding: 20px;
+                      border-radius: 9px;
+                      border: 1px solid #B5C8C8;
+                      margin: 10px 0 20px 0;
+                      outline: none;
+                    }
+                    > div {
+                      margin: 10px 0 20px 0;
+                      width: 546px;
+                    }
+                    textarea{
+                      width: 546px;
+                      border-radius: 9px;
+                      padding: 20px;
+                      border: 1px solid #B5C8C8;
+                      margin: 10px 0 20px 0;
+                      outline: none;
+                    }
+
+                  }
+                  .company-name-container{
+                    padding: 20px 0 0 40px;
+                    border-bottom: 1px solid #d2dae2;
+                    h3{
+                      margin: 0;
+                    }
+                    .companyLogoBox{
+                      display: flex;
+                      align-items: center;
+                      margin: 20px 0 20px 0;
+                      p{
+                        margin: 0;
+                        padding-right: 20px;
+                        color: #626F7D;
+                      }
+                      label {
+                        cursor: pointer;
+                        width: 50px;
+                        height: 20px;
+                        background: grey;
+                        display: block;
+                        border-radius: 100px;
+                        position: relative;
+                      }
+
+                      label:after {
+                        content: '';
+                        position: absolute;
+                        top: 5px;
+                        left: 5px;
+                        width: 10px;
+                        height: 10px;
+                        background: #fff;
+                        border-radius: 90px;
+                        transition: 0.3s;
+                      }
+                      input{
+                        display: none;
+                      }
+                      input:checked + label {
+                        background: #4CAF50;
+                      }
+
+                      input:checked + label:after {
+                        left: calc(100% - 5px);
+                        transform: translateX(-100%);
+                      }
+
+                      label:active:after {
+                        width: 50px;
+                      }
+                    }
+                  }
+
+                }
+
+                .meta-info-save-container{
+                  padding: 20px 0 20px 40px;
+                  border-top: 1px solid #d2dae2;
+
+                  button{
+                    background-color: #0F4C81;
+                    border: none;
+                    color: white;
+                    padding: 12px 28px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    border-radius: 9px;
+                  }
+                }
+
+              }
+
+            }
+            .configureZapierSettings{
+                overflow: auto;
+                height: calc(100vh - 108px);
+
+				.contentCustomAttributes {
+					display: flex;
+					justify-content: space-between;
+					.width, .height {
+						input[type=number]::-webkit-inner-spin-button {
+							opacity: 1
+						}
+						input, select {
+							max-width: 90px;
+							min-width: 90px;
+							min-height: 60px;
+							margin-left: 5px;
+							margin-top: 0;
+							margin-bottom: 0;
+							padding-left: 10px;
+							padding-right: 10px;
+							font-size: 16px;
+							border: 0.75px solid #E1E8F0;
+							border-radius: 12px;
+						}
+						
+						input:focus-visible, select:focus-visible {
+							border: 0.75px solid #0F4C81;
+							outline: none;
+						}
+
+						select {
+							background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+							background-position: calc(100% - 0.75rem) center !important;
+							-moz-appearance:none !important;
+							-webkit-appearance: none !important; 
+							appearance: none !important;
+							padding-right: 2rem !important;
+							background-color: white;
+						}
+					}
+				}
+
+                .contentApiKeyLabel-container{
+                    margin-bottom: 20px;
+                    border-bottom: 1px solid #d2dae2;
+                    h3{
+                      margin: 20px 0 0 40px;
+                    }
+                    p{
+                      margin: 20px 0 0 40px;
+                    }
+
+                    .contentApiKeyLabel{
+                        width: 546px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin: 37px 0 22px 44px;
+                        h3{
+                            margin: 0;
+                        }
+                        button{
+                            font-family: 'ApercuPro';
+                            background: none;
+                            border: none;
+                            background-color: #2196F3;
+                            border-radius: 6px;
+                            cursor: pointer;
+                            color: #ffffff;
+                            width: 132px;
+                            height: 23px;
+                        }
+                    }
+                    input{
+                        border: 1px solid #E1E8F0;
+                        background-color: #ffffff;
+                        padding: 20px;
+                        border-radius: 9px;
+                        width: 546px;
+                        margin: 0 0 44px 44px;
+                    }
+                }
+                .zapierSteps{
+                    margin: 44px 0 0 44px;
+                    ol{
+                      line-height: 30px;
+                    }
+                    .contentTypesLabel{
+                        h3{
+                            margin:0;
+                        }
+                    }
+                    .contentTypes-container{
+                        width: 547px;
+                        background-color: #F0F2F5;
+                        border-radius: 9px;
+                        display: flex;
+                        align-items: center;
+                        border: 1px solid #E1E8F0;
+                        margin-top: 15px;
+                        .contentType-element{
+                            width: 183px;
+                            float: left;
+                            text-align: center;
+                            opacity: 0.5;
+                            cursor: pointer;
+                            input{
+                                display:none;
+                            }
+                            label{
+                                cursor: pointer;
+                                padding: 20px;
+                                height: 100%;
+                                width: 100%;
+                                display: block;
+                            }
+                        }
+                        .contentType-element-active{
+                            background-color: #ffffff;
+                            border-radius: 9px;
+                            opacity: 1;
+                        }
+                    }
+
+                }
+                .contentHelpText, .contentCustomAttributes{
+                    width: 548px;
+                    padding: 20px;
+                    border: 1px solid #E1E8F0;
+                    border-radius: 9px;
+                    margin: 30px 0 0 44px;
+                    background-color: #F0F2F5;
+                }
+            }
+            .generalsettings-container{
+                .generalsettings{
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    height: calc(100vh - 198px);
+                    margin-left: 40px;
+
+                    .surveyfunnel-lite-share-collapsible{
+                        width: 940px;
+                        background-color: #ffffff;
+                        border: 1px solid #E3EAF1;
+                        outline: none;
+                        padding: 20px;
+                        border-radius: 9px;
+                        text-align: left;
+                        cursor: pointer;
+                        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+                        background-repeat: no-repeat;
+                        background-position-x: 900px;
+                        background-position-y: 45%;
+                        font-weight: bold;
+
+                        h3{
+                            margin: 0;
+                        }
+                    }
+                    .surveyfunnel-lite-target-btn, .surveyfunnel-lite-behaviour-btn{
+                        margin-top: 20px;
+                    }
+
+                    .surveyfunnel-lite-activate-btn{
+                        margin : 20px 0 10px 0;
+                    }
+                }
+                .activate-popup-options{
+                    background-color: #F0F2F5;
+                    padding: 20px;
+                    border-radius: 9px;
+                    margin: 0 0 20px 0;
+                    width: 940px;
+                    display: none;
+                    color: #626F7D;
+                    margin: 0 0 20px 0;
+
+                    .reviewAndActivateOptions{
+                        display: flex;
+                        flex-direction: column;
+                        p{
+                            margin: 0 0 10px 0;;
+                        }
+                        label {
+                            cursor: pointer;
+                            width: 50px;
+                            height: 20px;
+                            background: grey;
+                            display: block;
+                            border-radius: 100px;
+                            position: relative;
+                        }
+                        
+                        label:after {
+                            content: '';
+                            position: absolute;
+                            top: 5px;
+                            left: 5px;
+                            width: 10px;
+                            height: 10px;
+                            background: #fff;
+                            border-radius: 90px;
+                            transition: 0.3s;
+                        }
+                        input{
+                            display: none;
+                        }
+                        input:checked + label {
+                            background: #4CAF50;
+                        }
+                        
+                        input:checked + label:after {
+                            left: calc(100% - 5px);
+                            transform: translateX(-100%);
+                        }
+                        
+                        label:active:after {
+                            width: 50px;
+                        }
+                    }          
+                }
+                .share-info-save-container{
+                    padding: 20px 0 20px 40px;
+                    border-top: 1px solid #d2dae2;
+    
+                    button{
+                        background-color: #0F4C81;
+                        border: none;
+                        color: white;
+                        padding: 12px 28px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin: 4px 2px;
+                        cursor: pointer;
+                        border-radius: 9px;
+                    }
+                }
+
+                
+            }
+        }
+    }
+}
+
+$medium-size : 1400px;
+@media screen and (max-width: $medium-size) {
+    .Configure{
+        .configureTabContent{
+            .configureTabContentContainer{
+                .generalsettings-container{
+                    .generalsettings{
+                        .surveyfunnel-lite-share-collapsible{
+                            width: 640px;
+                            background-position-x: 600px;
+
+                        }
+                        .targetting-options{
+                            width: 640px;
+                            .surveyfunnel-lite-show-device-container{
+                                .surveyfunnel-lite-device-box{
+                                    width: 182px;
+
+                                }
+                            }
+                        }
+                        .behaviour-options{
+                            width: 640px;
+                        }
+                        .activate-popup-options{
+                            width: 640px;
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+}
